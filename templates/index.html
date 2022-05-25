@@ -4,6 +4,12 @@
 <article>
   <h2>ホーム画面</h2>
   <p>こちらはホーム画面です。</p>
+  <p>＜記事一覧＞</p>
+  <ul>
+  {% for post in posts %}
+  <li><a href="/{{post.id}}/articles" role="button">{{post.title}}<br></a></li>
+  {% endfor %}
+  </ul>
 </article>
 <a href="{{url_for('article1')}}">記事1へ</a>
 <a href="{{url_for('article2')}}">記事2へ</a>

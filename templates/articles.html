@@ -1,0 +1,18 @@
+{% extends "base.html"%} {% block content %}
+<h1>Flask Blog</h1>
+<article>
+  <h2>ホーム画面</h2>
+  <p>こちらはホーム画面です。</p>
+  <h2>{{posts.title}}</h2>
+  <ul>
+    <li>作成日時：{{posts.created_at}}</li>
+  </ul>
+  <ul>
+    <li>{{posts.body}}</li>
+  </ul>
+  <a href="/{{posts.id}}/update" role="button">編集</a>
+  <a href="/{{posts.id}}/delete" role="button">削除</a>
+
+</article>
+<a href= "{{url_for('index')}}">戻る</a>
+{% endblock %}
